@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Binomial Rechner</title>
+</head>
+<body>
+    <h1 id="title">Binomial Rechner</h1>
+    <div id="inputs" class="center">
+        <p class="inline">n:</p>
+        <input type="number" id="n" placeholder="n" value="0">
+        <p class="inline">k:</p>
+        <input type="number" id="k" placeholder="k" value="0">
+        <p class="inline">p:</p>
+        <input type="number" id="p" placeholder="p" value="0"> 
+    </div>
+    <br>
+    <div id="buttons" class="center">
+        <button class="sign-selector" id=">">></button>
+        <button class="sign-selector" id=">=">>=</button>
+        <button class="sign-selector" id="=">=</button>
+        <button class="sign-selector" id="<="><=</button>
+        <button class="sign-selector" id="<"><</button>
+        <br>
+        <button class="sign-selector" id="k">? ≤ k ≤ ?</button>  
+        
+    </div>
+    <div id="buttons2" class="center">
+        <input type="number" class="inputs2" id="k-left">
+        <button class="sign-selector2 disabled" id="<-up"><=</button>
+        <button class="sign-selector2 disabled" id="<=-up"><</button>
+        <p id="display-k">x</p>
+        <button class="sign-selector2 disabled" id="<=-down"><=</button>
+        <button class="sign-selector2 disabled" id="<-down"><</button>
+        <input type="number" class="inputs2" id="k-right">
+    </div>
+    <div id="start" class="center">
+        <button id="calc">Calc</button>
+        <p id="answer">Answer: </p>
+    </div>
+    
+    
+</body>
+<script src="./script.js"></script>
+</html>
