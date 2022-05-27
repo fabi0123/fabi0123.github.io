@@ -205,22 +205,28 @@ document.getElementById('calc').addEventListener('click', () => {
     if (sign === 'k' && kleft < 0 || sign === 'k' && kleft > kright) displayAns("Invalid input", true);
     if (sign === 'k' && kright < 0 || sign === 'k' && kright > n) displayAns("Invalid input", true);
 
-  if (sign === '=') {
-    displayAns(binomialpdf(n, k, p, 'display'))
-  } else {
-    displayAns(binomialcdf(n, k, p, sign, kleft, kright))
-  }
-  spanOnclick()
+    if (sign === '=') {
+      displayAns(binomialpdf(n, k, p, 'display'))
+    } else {
+      displayAns(binomialcdf(n, k, p, sign, kleft, kright))
+    }
+    erwartung(n, p)
 })
 
 
-function spanOnclick() {
-  document.querySelectorAll('.k').forEach(span => {
-    span.addEventListener('click', sp => {
-      console.log(test[span.id]);
-    })
-  })
-  
+function erwartung(n, p) {
+  let erw = n*p
+  let abw = abweichung(n, p)
+  let res1 = erw - abw
+  let res2 = erw + abw
+  document.getElementById('erw').innerHTML = `µ: ${erw}`
+  document.getElementById('abw').innerHTML = `σ: ${abw}`
+  document.getElementById('erw-Ber').innerHTML = `Erwartungs Bereich: ${Math.ceil(res1)} - ${Math.floor(res2)}`
+}
+
+function abweichung(n, p) {
+  let res = Math.sqrt(n*p*(1-p))
+  return res
 }
 
 // setInterval(() => {
