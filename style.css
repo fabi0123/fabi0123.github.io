@@ -34,3 +34,20 @@ button {
 #title {
     text-align: center;
 }
+
+.k {
+    width: 8.75px;
+    height: 8.75px;
+    border-radius: 50%;
+    display: inline-block;
+    margin: 0 5px 0 5px;
+}
+.k.red {
+    background-color: red;
+}
+.k.black {
+    background-color: black;
+}
+.k.K {
+    background-color: lightcoral;
+}
