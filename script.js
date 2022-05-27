@@ -76,7 +76,7 @@ function binomialcdf(n, k, p, sign, kl, kr) {
       displayR = kr
     }
     res = calcHelpr - calcHelpl
-    displayK(n, displayL, displayR, k)
+    displayK(n, displayL, displayR, k, 'area')
   }
 
   return res
@@ -100,7 +100,7 @@ function displayAns(ans, error) {
   }
 }
 
-function displayK(n, k1, k2, k) {
+function displayK(n, k1, k2, k, type) {
   let div = document.getElementById('displayk')
   while (div.firstChild) {
     div.removeChild(div.firstChild)
@@ -116,7 +116,7 @@ function displayK(n, k1, k2, k) {
       }
     }
   }
-  document.getElementById(k).classList.add('K')
+  if (type !== 'area') document.getElementById(k).classList.add('K')
 }
 
 
