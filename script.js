@@ -1,7 +1,7 @@
 let sign;
 let signup;
 let signdown;
-let test = []
+let liste = []
 
 function coefficient(n, k) {
   nfac = factorialize(n)
@@ -26,7 +26,7 @@ function binomialcdf(n, k, p, sign, kl, kr) {
   let displayR = 0;
 
   for (let i = 0; i <= n; i++) {
-    test.push(binomialpdf(n, i, p))
+    liste.push(binomialpdf(n, i, p))
   }
 
 
@@ -107,12 +107,12 @@ function displayK(n, k1, k2, k, type) {
   }
   for (let i = 0; i <= n; i++) {
     if (i < k1) {
-      div.innerHTML += `<span id="${i}" class="k black" title="${i} P = ${test[i]}"></span>`
+      div.innerHTML += `<span id="${i}" class="k black" title="${i} P = ${liste[i]}"></span>`
     } else {
       if (i <= k2) {
-        div.innerHTML += `<span id="${i}" class="k red" title="${i} P = ${test[i]}"></span>`
+        div.innerHTML += `<span id="${i}" class="k red" title="${i} P = ${liste[i]}"></span>`
       } else {
-        div.innerHTML += `<span id="${i}" class="k black" title="${i} P = ${test[i]}" ></span>`
+        div.innerHTML += `<span id="${i}" class="k black" title="${i} P = ${liste[i]}" ></span>`
       }
     }
   }
@@ -190,7 +190,7 @@ document.getElementById('calc').addEventListener('click', () => {
     let kleft = parseInt(document.getElementById('k-left').value)
     let kright = parseInt(document.getElementById('k-right').value)
     
-    test = []
+    liste = []
     //Calc
 
     if (typeof kleft !== 'number' || typeof kright !== 'number' || typeof n !== 'number' || typeof k !== 'number' || typeof p !== 'number') return displayAns("The inputs can't be empty", true)
