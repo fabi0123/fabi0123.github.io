@@ -79,7 +79,7 @@ function binomialcdf(n, k, p, sign, kl, kr) {
     displayK(n, displayL, displayR, k, 'area')
   }
 
-  return res
+  return res.toFixed(5)
 }
 
 function factorialize(num) {
@@ -206,7 +206,7 @@ document.getElementById('calc').addEventListener('click', () => {
     if (sign === 'k' && kright < 0 || sign === 'k' && kright > n) displayAns("Invalid input", true);
 
     if (sign === '=') {
-      displayAns(binomialpdf(n, k, p, 'display'))
+      displayAns(binomialpdf(n, k, p, 'display').toFixed(5))
     } else {
       displayAns(binomialcdf(n, k, p, sign, kleft, kright))
     }
